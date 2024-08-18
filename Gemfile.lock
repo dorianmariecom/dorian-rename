@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    dorian-rename (0.0.1)
+    dorian-rename (0.0.2)
 
 GEM
   remote: https://rubygems.org/
