@@ -3,8 +3,8 @@
 Gem::Specification.new do |s|
   s.name = "dorian-rename"
   s.version = "0.0.1"
-  s.summary = "Rename files"
-  s.description = "#{s.summary}\n\ne.g. `rename \"cool\" \"coolest\" *.md`"
+  s.summary = "renames files and directories"
+  s.description = s.summary
   s.authors = ["Dorian Marié"]
   s.email = "dorian@dorianmarie.com"
   s.files = ["bin/rename"]
