@@ -20,5 +20,5 @@ end
 
 from, to = parsed.arguments
 directories = parsed.files.select { |file| File.directory?(file) }
-(files - directories).each { |file| rename(file, file.gsub(from, to)) }
+(parsed.files - directories).each { |file| rename(file, file.gsub(from, to)) }
 directories.each { |directory| rename(directory, directory.gsub(from, to)) }
