@@ -11,8 +11,8 @@ RSpec.describe "rename" do
     new = SecureRandom.hex
     tempfile = Tempfile.create(old)
     `bin/rename #{old} #{new} #{tempfile.path}`
-    expect(File.exist?(tempfile.path)).to eq false
-    expect(File.exist?(tempfile.path.gsub(old, new))).to eq true
+    expect(File.exist?(tempfile.path)).to be false
+    expect(File.exist?(tempfile.path.gsub(old, new))).to be true
   ensure
     begin
       File.delete(tempfile.path.gsub(old, new))

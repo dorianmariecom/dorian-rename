@@ -4,10 +4,10 @@
 require "dorian/arguments"
 
 def rename(old, new)
-  if old != new
-    puts "#{old} -> #{new}"
-    File.rename(old, new)
-  end
+  return unless old != new
+
+  puts "#{old} -> #{new}"
+  File.rename(old, new)
 end
 
 parsed = Dorian::Arguments.parse(version: { alias: :v }, help: { alias: :h })
@@ -15,7 +15,7 @@ parsed = Dorian::Arguments.parse(version: { alias: :v }, help: { alias: :h })
 abort parsed.help if parsed.options.help
 
 if parsed.options.version
-  abort File.read(File.expand_path("../../VERSION", __FILE__))
+  abort File.read(File.expand_path("../VERSION", __dir__))
 end
 
 from, to = parsed.arguments
