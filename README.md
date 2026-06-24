@@ -1,28 +1,35 @@
-# `dorian-replace`
+# `dorian-rename`
 
-Replace some string with some other string from the files provided
+Rename files and directories by replacing part of their paths.
 
-e.g. `replace "cool" "coolest" *.md`
-
-### Install
+## Install
 
 ```bash
-gem install dorian-replace
+gem install dorian-rename
 ```
 
-Or as part of my other gems:
+Also included in the aggregate gem:
 
 ```bash
 gem install dorian
 ```
 
-### Usage
-
-From my history:
+## Usage
 
 ```bash
-replace "WorldCountry.spain" "WorldCountry.by_name('Espagne')" test/**/*
-replace "Né(e) à l'étranger / Outre-Mer" "Né(e) à l'étranger" test/**/*
-git grep -l " doc " app/assets/ | xargs replace " doc " " document "
-git grep -l "={doc}" | xargs replace "={document}"
+rename old new file-or-directory ...
+```
+
+Run `rename -h` for generated option details and `rename -v` for the installed version.
+
+## Notes
+
+- Files are renamed before directories. Each rename is printed as `old -> new`.
+
+## Examples
+
+### Rename matching paths
+
+```bash
+rename draft final docs/draft-notes.md
 ```
